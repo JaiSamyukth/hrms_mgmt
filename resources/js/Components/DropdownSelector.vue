@@ -4,7 +4,7 @@
             type="button"
             class="py-2 px-4 border dark:border-gray-700 rounded-md shadow-sm text-sm font-medium text-gray-700
                     bg-white dark:bg-gray-700 dark:text-white dark:hover:bg-gray-700 focus:outline-none w-full
-                    focus:ring-2 focus:ring-purple-500"
+                    focus:ring-2 focus:ring-blue-500"
             @click="toggleListbox"
         >
             {{ selectedOption.label }}
@@ -28,8 +28,8 @@
                     :key="option.value"
                     @click="selectOption(option)"
                     class="cursor-pointer select-none relative px-4 py-2 text-sm text-gray-900 dark:text-white
-                            hover:bg-purple-600 dark:hover:bg-purple-600 hover:text-gray-100 rounded  w-full"
-                    :class="{ 'text-purple-600': option.value === selectedOption.value }"
+                            hover:bg-blue-600 dark:hover:bg-blue-600 hover:text-gray-100 rounded  w-full"
+                    :class="{ 'text-blue-600': option.value === selectedOption.value }"
                 >
                     <span>{{ option.label }}</span>
                     <span

@@ -62,7 +62,7 @@ const submit = () => {
     const swalWithBootstrapButtons = Swal.mixin({
         customClass: {
             cancelButton: 'mx-4 text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900',
-            confirmButton: 'text-white bg-purple-700 hover:bg-purple-800 focus:outline-none focus:ring-4 focus:ring-purple-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900'
+            confirmButton: 'text-white bg-accent-blue hover:bg-blue-600 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2'
         },
         buttonsStyling: false
     })
@@ -179,7 +179,7 @@ onMounted(() => {
                 <div class="flex flex-col md:flex-row justify-between md:gap-4">
 
                     <!-- PAY DAY -->
-                    <Card class="w-full md:w-1/4 bg-gradient-to-r from-indigo-700 to-purple-800 glow-element">
+                    <Card class="w-full md:w-1/4 bg-gradient-to-r from-blue-700 to-blue-600 glow-element">
                         <h1 class="text-2xl text-white">{{ __('Pay Day') }}</h1>
                         <div class="mt-4 text-white">
                             <p class="text-white">
@@ -225,36 +225,89 @@ onMounted(() => {
                         </div>
                     </Card>
 
-                    <Card class="w-full md:w-2/4  ">
-                        <h1 class="text-2xl">{{ __('Your Attendance This Month') }}</h1>
-                        <div class="mt-4 grid grid-rows-3">
-                            <div class="flex flex-col lg:flex-row justify-between align-middle mb-6 sm:mb-2">
-                                <p class="w-full sm:w-1/3">{{ __('Attended') + ' ' + employee_stats['totalAttendanceSoFar']}}</p>
-                                <ProgressBar class="col-span-3"  color="bg-green-500" no-text
-                                             :percentage="employee_stats['totalAttendanceSoFar'] / employee_stats['attendableThisMonth'] * 100"
-                                             :text="employee_stats['totalAbsenceSoFar'] + (employee_stats['totalAbsenceSoFar'] > 0 ? __('Day(s)') : '')"/>
-
+                    <Card class="w-full md:w-2/4">
+                        <h1 class="text-2xl mb-6">{{ __('Your Attendance This Month') }}</h1>
+                        <div class="mt-4 space-y-5">
+                            <!-- Attended -->
+                            <div class="p-4 rounded-lg border dark:border-green-500/30 dark:bg-green-500/10">
+                                <div class="flex justify-between items-center mb-3">
+                                    <div class="flex items-center gap-2">
+                                        <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                                        <p class="text-lg font-semibold">{{ __('Attended') }}</p>
+                                    </div>
+                                    <p class="text-2xl font-bold text-green-600 dark:text-green-400">{{ employee_stats['totalAttendanceSoFar'] }}</p>
+                                </div>
+                                <ProgressBar class="h-3" color="bg-green-500" no-text
+                                             :percentage="employee_stats['totalAttendanceSoFar'] / employee_stats['attendableThisMonth'] * 100"/>
+                                <p class="text-xs text-gray-600 dark:text-gray-400 mt-2">
+                                    {{ employee_stats['totalAttendanceSoFar'] }} / {{ employee_stats['attendableThisMonth'] }} {{ __('days') }}
+                                </p>
                             </div>
 
-
-                            <div class="flex flex-col lg:flex-row justify-between align-middle mb-6 sm:mb-2">
-                                <p class="w-full sm:w-1/3">{{ __('Absented:') }} {{ employee_stats['absentedThisMonth'] }}</p>
-                                <ProgressBar no-text  color="bg-red-500"
-                                             :percentage="employee_stats['totalAbsenceSoFar'] / employee_stats['YearStats']['absence_limit'] * 100"
-                                             :text="employee_stats['totalAbsenceSoFar'] + (employee_stats['totalAbsenceSoFar'] > 0 ? __('Day(s)') : '')"/>
-
+                            <!-- Absented -->
+                            <div class="p-4 rounded-lg border dark:border-red-500/30 dark:bg-red-500/10">
+                                <div class="flex justify-between items-center mb-3">
+                                    <div class="flex items-center gap-2">
+                                        <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                                        <p class="text-lg font-semibold">{{ __('Absented') }}</p>
+                                    </div>
+                                    <p class="text-2xl font-bold text-red-600 dark:text-red-400">{{ employee_stats['absentedThisMonth'] }}</p>
+                                </div>
+                                <ProgressBar class="h-3" no-text color="bg-red-500"
+                                             :percentage="employee_stats['totalAbsenceSoFar'] / employee_stats['YearStats']['absence_limit'] * 100"/>
+                                <p class="text-xs text-gray-600 dark:text-gray-400 mt-2">
+                                    {{ employee_stats['totalAbsenceSoFar'] }} / {{ employee_stats['YearStats']['absence_limit'] }} {{ __('yearly limit') }}
+                                </p>
                             </div>
-                            <div class="flex flex-col lg:flex-row justify-between align-middle mb-6 sm:mb-2">
-                                <p class="w-full sm:w-1/3">{{ __('Hours:') }}
-                                    <ToolTip direction="bottom">
-                                        {{ __('Number of Overtime/Undertime Hours (so far).') }}<br/>
-                                        {{ __('This value will be accounted for in the payroll, resulting in a reward or a penalty.') }}
-                                    </ToolTip>
-                                    {{ employee_stats['hoursDifferenceSoFar'].toFixed(0) + __('h') }}</p>
-                                <ProgressBar class="col-span-3"
-                                             :percentage="employee_stats['hoursDifferenceSoFar']"
-                                             :text="employee_stats['hoursDifferenceSoFar'] === 0 ? '' :Math.abs(employee_stats['hoursDifferenceSoFar']).toFixed(2) + ' ' + __('Hours') +' ' + (employee_stats['hoursDifferenceSoFar'] > 0 ? __('extra') : __('late'))"
-                                             :color="employee_stats['hoursDifferenceSoFar'] > 0 ? 'bg-green-500' : 'bg-red-500' "/>
+
+                            <!-- Hours -->
+                            <div :class="[
+                                'p-4 rounded-lg border',
+                                employee_stats['totalAttendanceSoFar'] === 0 
+                                    ? 'dark:border-gray-500/30 dark:bg-gray-500/10'
+                                    : employee_stats['hoursDifferenceSoFar'] > 0 
+                                        ? 'dark:border-green-500/30 dark:bg-green-500/10'
+                                        : 'dark:border-red-500/30 dark:bg-red-500/10'
+                            ]">
+                                <div class="flex justify-between items-center mb-3">
+                                    <div class="flex items-center gap-2">
+                                        <div :class="[
+                                            'w-3 h-3 rounded-full',
+                                            employee_stats['totalAttendanceSoFar'] === 0 
+                                                ? 'bg-gray-500'
+                                                : employee_stats['hoursDifferenceSoFar'] > 0 
+                                                    ? 'bg-green-500'
+                                                    : 'bg-red-500'
+                                        ]"></div>
+                                        <p class="text-lg font-semibold">{{ __('Hours') }}</p>
+                                        <ToolTip direction="bottom">
+                                            {{ __('Number of Overtime/Undertime Hours (so far).') }}<br/>
+                                            {{ __('This value will be accounted for in the payroll, resulting in a reward or a penalty.') }}
+                                        </ToolTip>
+                                    </div>
+                                    <p :class="[
+                                        'text-2xl font-bold',
+                                        employee_stats['totalAttendanceSoFar'] === 0 
+                                            ? 'text-gray-600 dark:text-gray-400'
+                                            : employee_stats['hoursDifferenceSoFar'] > 0 
+                                                ? 'text-green-600 dark:text-green-400'
+                                                : 'text-red-600 dark:text-red-400'
+                                    ]">
+                                        {{ employee_stats['totalAttendanceSoFar'] === 0 ? '--' : employee_stats['hoursDifferenceSoFar'].toFixed(0) + __('h') }}
+                                    </p>
+                                </div>
+                                <ProgressBar class="h-3"
+                                             :percentage="employee_stats['totalAttendanceSoFar'] === 0 ? 0 : Math.abs(employee_stats['hoursDifferenceSoFar'])"
+                                             no-text
+                                             :color="employee_stats['totalAttendanceSoFar'] === 0 ? 'bg-gray-400' : (employee_stats['hoursDifferenceSoFar'] > 0 ? 'bg-green-500' : 'bg-red-500')"/>
+                                <p class="text-xs text-gray-600 dark:text-gray-400 mt-2">
+                                    <span v-if="employee_stats['totalAttendanceSoFar'] === 0" class="italic">
+                                        {{ __('No attendance recorded yet') }}
+                                    </span>
+                                    <span v-else>
+                                        {{ employee_stats['hoursDifferenceSoFar'] === 0 ? __('On time') : Math.abs(employee_stats['hoursDifferenceSoFar']).toFixed(2) + ' ' + __('Hours') + ' ' + (employee_stats['hoursDifferenceSoFar'] > 0 ? __('extra') : __('late')) }}
+                                    </span>
+                                </p>
                             </div>
                         </div>
                     </Card>
@@ -269,28 +322,28 @@ onMounted(() => {
                             <Card class="w-full lg:w-1/4 !shadow-none !overflow-visible flex-1 " :fancy-p="false">
                                 <IconCard :heading="__('Payrolls')" :cta-text="__('Go To Payments')"
                                           :href="route('payrolls.index')">
-                                    <MoneyIcon class="!mb-4 !h-12 !w-12 text-purple-500"/>
+                                    <MoneyIcon class="!mb-4 !h-12 !w-12 text-blue-500"/>
                                 </IconCard>
                             </Card>
 
                             <Card class="w-full lg:w-1/4 !shadow-none !overflow-visible flex-1 " :fancy-p="false">
                                 <IconCard :heading="__('Attendance')" :cta-text="__('Go to Attendance')"
                                           :href="route('attendance.dashboard')">
-                                    <TableIcon class="!mb-4 !h-12 !w-12 text-purple-500"/>
+                                    <TableIcon class="!mb-4 !h-12 !w-12 text-blue-500"/>
                                 </IconCard>
                             </Card>
 
                             <Card class="w-full lg:w-1/4 !shadow-none !overflow-visible flex-1 " :fancy-p="false">
                                 <IconCard :heading="__('Calendar')" :cta-text="__('Go to Calendar')"
                                           :href="route('calendar.index')">
-                                    <CalendarIcon class="!mb-4 !h-12 !w-12 text-purple-500"/>
+                                    <CalendarIcon class="!mb-4 !h-12 !w-12 text-blue-500"/>
                                 </IconCard>
                             </Card>
 
                             <Card class="w-full lg:w-1/4 !shadow-none !overflow-visible flex-1 " :fancy-p="false">
                                 <IconCard :heading="__('Support')" :cta-text="__('Go To Requests')"
                                           :href="route('requests.index')">
-                                    <MessageIcon class="!mb-4 !h-12 !w-12 text-purple-500"/>
+                                    <MessageIcon class="!mb-4 !h-12 !w-12 text-blue-500"/>
                                 </IconCard>
                             </Card>
                         </div>

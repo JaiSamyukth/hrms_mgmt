@@ -48,12 +48,12 @@ function changeLanguage(locale){
            :class="$page.props.locale == 'ar' ? 'right-0' : 'left-0'"
            aria-label="Sidebar">
         <div
-            class="h-full px-3 py-4 overflow-y-auto border-r flex flex-col justify-between dark:bg-gray-800 dark:border-gray-800">
+            class="h-full px-3 py-4 overflow-y-auto border-r flex flex-col justify-between dark:bg-dark-surface dark:border-dark-border">
             <ul v-if="$page.props.auth.user.roles.includes('admin')" class="space-y-2 font-medium mb-4">
                 <div class="flex flex-row items-center">
-                    <div class="bg-purple-500 h-px flex-grow"></div>
+                    <div class="bg-accent-blue h-px flex-grow"></div>
                     <div class=" px-2">{{__('Admin Tools')}}</div>
-                    <div class="bg-purple-500 h-px flex-grow"></div>
+                    <div class="bg-accent-blue h-px flex-grow"></div>
                 </div>
 
                 <SidebarListItem :item-name="__('My Dashboard')" :hasBadge="false" link="dashboard.index"
@@ -104,9 +104,9 @@ function changeLanguage(locale){
 
             <ul v-else class="space-y-2 font-medium mb-4">
                 <div class="flex flex-row items-center">
-                    <div class="bg-purple-500 h-px flex-grow"></div>
+                    <div class="bg-accent-blue h-px flex-grow"></div>
                     <div class=" px-2">{{__('My Services')}}</div>
-                    <div class="bg-purple-500 h-px flex-grow"></div>
+                    <div class="bg-accent-blue h-px flex-grow"></div>
                 </div>
                 <SidebarListItem :item-name="__('My Dashboard')" :hasBadge="false" link="dashboard.index"
                                  :active-links="['dashboard.index']">
@@ -147,7 +147,7 @@ function changeLanguage(locale){
 
     <div :class="$page.props.locale === 'ar' ? 'sm:mr-64' : 'sm:ml-64'">
         <div>
-            <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
+            <div class="min-h-screen bg-gray-100 dark:bg-dark-bg">
                 <nav class=" border-b border-gray-300 dark:border-gray-600">
 
                     <!-- Primary Navigation Menu -->

@@ -1,14 +1,33 @@
-
 @tailwind base;
 
 @layer base {
+
+    /* Enterprise Dark Theme - CSS Custom Properties */
+    :root {
+        --dark-bg: #0F172A;
+        --dark-surface: #111827;
+        --dark-border: #1F2937;
+        --dark-text: #E5E7EB;
+        --muted-text: #9CA3AF;
+        --accent-blue: #3B82F6;
+        --success: #22C55E;
+        --warning: #F59E0B;
+        --error: #EF4444;
+
+        /* Transition timing */
+        --transition: 150ms ease-in-out;
+    }
+
     html {
         @apply text-neutral-800;
 
         /* Hiding Scrollbar */
-        -ms-overflow-style: none;  /* IE 10+ */
-        scrollbar-width: none;  /* Firefox */
+        -ms-overflow-style: none;
+        /* IE 10+ */
+        scrollbar-width: none;
+        /* Firefox */
     }
+
     * [dir='ltr'] {
         @apply font-sans !important;
     }
@@ -16,12 +35,15 @@
     *[dir='rtl'] {
         @apply font-serif !important;
     }
+
     html::-webkit-scrollbar {
-        display: none;  /* Safari and Chrome */
+        display: none;
+        /* Safari and Chrome */
     }
 
     html.dark {
-        @apply text-neutral-50 bg-neutral-800;
+        background-color: var(--dark-bg);
+        color: var(--dark-text);
     }
 
     p {
@@ -47,35 +69,41 @@
 }
 
 .fancy-selector {
-    @apply bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-purple-500 focus:border-purple-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-purple-500 dark:focus:border-purple-500
-}
-.fancy-selector-inline-textInput {
-    @apply  bg-gray-50 border border-gray-300 border-r-0 text-gray-900 rounded-lg focus:ring-purple-500 ltr:rounded-r-none rtl:rounded-l-none focus:border-purple-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-purple-500 dark:focus:border-purple-500
+    @apply bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-accent-blue focus:border-accent-blue block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-accent-blue dark:focus:border-accent-blue
 }
 
-.input-class{
-    @apply block p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg w-full bg-gray-50 focus:ring-purple-500 focus:border-purple-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-purple-500 dark:focus:border-purple-500;
+.fancy-selector-inline-textInput {
+    @apply bg-gray-50 border border-gray-300 border-r-0 text-gray-900 rounded-lg focus:ring-accent-blue ltr:rounded-r-none rtl:rounded-l-none focus:border-accent-blue dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-accent-blue dark:focus:border-accent-blue
+}
+
+.input-class {
+    @apply block p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg w-full bg-gray-50 focus:ring-accent-blue focus:border-accent-blue dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-accent-blue dark:focus:border-accent-blue;
 }
 
 .ul-checkbox {
     @apply items-center w-full text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg lg:flex dark:bg-gray-700 dark:border-gray-600 dark:text-white
 }
+
 .li-checkbox {
     @apply w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600
 }
+
 .li-checkbox-input {
-    @apply w-4 h-4 text-purple-600 bg-gray-100 border-gray-300 rounded focus:ring-purple-500 dark:focus:ring-purple-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500
+    @apply w-4 h-4 text-accent-blue bg-gray-100 border-gray-300 rounded focus:ring-accent-blue dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500
 }
+
 .li-checkbox-label {
     @apply w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300
 }
 
 .li-radio-input {
-    @apply w-4 h-4 text-purple-600 bg-gray-100 border-gray-300 focus:ring-purple-500 dark:focus:ring-purple-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500
+    @apply w-4 h-4 text-accent-blue bg-gray-100 border-gray-300 focus:ring-accent-blue dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500
 }
+
 .li-radio-label {
     @apply w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300
 }
+
 .ul-li-div-radio {
     @apply flex items-center pl-3
 }
@@ -85,12 +113,15 @@
 .table-thead {
     @apply text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400
 }
+
 .table-tr {
     @apply border-b dark:bg-gray-900 dark:border-gray-700
 }
+
 .table-th {
     @apply px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white
 }
+
 .table-td {
     @apply px-6 py-4
 }
@@ -98,21 +129,22 @@
 .card-header {
     @apply text-xl text-gray-900 dark:text-white
 }
+
 .card-subheader {
     @apply mb-2 ml-1 font-semibold text-gray-900 dark:text-white
 }
+
 .form {
     @apply mt-6 pt-0
 }
 
 /* VueDatePicker Dart Mode */
-.dp__theme_dark{
-    --dp-background-color:  #374151 !important;
+.dp__theme_dark {
+    --dp-background-color: #374151 !important;
     --dp-border-color: #4b5563 !important;
-    --dp-primary-color: #642fd3 !important;
-}
-.dp__theme_light{
-    --dp-primary-color: #642fd3 !important;
+    --dp-primary-color: #3B82F6 !important;
 }
 
-
+.dp__theme_light {
+    --dp-primary-color: #3B82F6 !important;
+}

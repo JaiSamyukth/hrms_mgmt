@@ -74,7 +74,7 @@ const props = defineProps({
                 </td>
                 <td v-if="hasActions" class="px-6 py-4">
                     <Link :href="route(controller + '.edit', { id: value.id } )"
-                          class="font-medium text-purple-600 dark:text-purple-500 hover:underline">{{__('Edit')}}
+                          class="font-medium text-blue-600 dark:text-blue-500 hover:underline">{{__('Edit')}}
                     </Link>
                 </td>
             </tr>

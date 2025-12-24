@@ -16,8 +16,8 @@ const props = defineProps({
 <template>
     <li>
         <Link :href="route(link)"
-              class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-purple-100 dark:hover:bg-purple-700 dark:text-gray-100"
-              :class="{'bg-purple-100 dark:bg-purple-800' :
+              class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900/20 dark:text-gray-100 transition-all duration-150"
+              :class="{'bg-blue-50 dark:bg-blue-900/30' :
               activeLinksRecursive ? activeLinksRecursive.some(item => $page.url.includes(item)) :
               activeLinks.includes(route().current())
         }">
@@ -32,8 +32,8 @@ const props = defineProps({
             <span class="flex-1 mx-3 whitespace-nowrap">{{ itemName }}</span>
 
             <span v-if="hasBadge"
-                  :class="{'inline-flex items-center justify-center w-3 h-3 p-3 ml-3 text-sm font-medium text-purple-800 bg-purple-100 rounded-full dark:bg-purple-700 dark:text-gray-300': badge === 'number',
-                            'inline-flex items-center justify-center px-2 ml-3 text-sm font-medium text-gray-800 bg-gray-200 rounded-full dark:bg-purple-700 dark:text-gray-300': badge !== 'number'}">
+                  :class="{'inline-flex items-center justify-center w-3 h-3 p-3 ml-3 text-sm font-medium text-white bg-accent-blue rounded-full': badge === 'number',
+                            'inline-flex items-center justify-center px-2 ml-3 text-sm font-medium text-gray-800 bg-gray-200 rounded-full dark:bg-accent-blue dark:text-white': badge !== 'number'}">
                 {{ badgeContent }}
                 </span>
         </Link>

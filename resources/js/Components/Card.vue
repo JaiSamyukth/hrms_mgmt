@@ -13,7 +13,7 @@ defineProps({
 </script>
 
 <template>
-  <div class="mt-4 bg-white  shadow-sm rounded-lg dark:bg-gray-800">
+  <div class="mt-4 bg-white shadow-sm rounded-lg border border-dark-border dark:bg-dark-surface dark:border-dark-border">
     <div :class="{'fancy-p': fancyP, 'h-full flex flex-col items-center justify-center': vl}">
         <slot />
     </div>

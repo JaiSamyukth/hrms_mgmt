@@ -8,11 +8,11 @@ const props = defineProps({
     },
     color: {
         type: String,
-        default: 'bg-purple-500'
+        default: 'bg-accent-blue'
     },
     textColor: {
         type: String,
-        default: 'text-purple-100'
+        default: 'text-white'
     }
 })
 const colorClass = props.color + ' ' + props.textColor + (props.percentage === 0 ? ' !p-0 !text-black' : '');
