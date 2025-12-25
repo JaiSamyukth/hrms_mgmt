@@ -1,4 +1,12 @@
 {
+    "name": "hrms-mgmt",
+    "version": "1.0.0",
+    "description": "Professional HR Management System with Dark Theme",
+    "author": "Jai Samyukth",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/JaiSamyukth/hrms_mgmt.git"
+    },
     "private": true,
     "type": "module",
     "scripts": {

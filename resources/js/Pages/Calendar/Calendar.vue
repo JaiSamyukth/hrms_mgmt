@@ -152,7 +152,7 @@ onMounted(() => {
                                     <TextInput
                                         id="title"
                                         type="text"
-                                        class="block w-full p-1.5 border-gray-300 rounded focus:border-purple-500 focus:ring-purple-500"
+                                        class="block w-full p-1.5 border-gray-300 rounded focus:border-blue-500 focus:ring-blue-500"
                                         :class="{'border border-red-500': form.errors.title}"
                                         v-model="form.title"
                                         autocomplete="off"
@@ -163,9 +163,9 @@ onMounted(() => {
                                 </div>
                                 <div class="flex items-center justify-end mt-5">
                                     <button
-                                        class=" text-white bg-purple-600 hover:bg-purple-700 border border-purple-600 focus:ring-2 focus:outline-none
-                                        focus:ring-purple-500 rounded px-5 p-1.5 text-center inline-flex items-center
-                                        dark:focus:ring-purple-600 dark:bg-purple-800 dark:border-purple-800 dark:text-white dark:hover:bg-purple-700"
+                                        class=" text-white bg-blue-600 hover:bg-blue-700 border border-blue-600 focus:ring-2 focus:outline-none
+                                        focus:ring-blue-500 rounded px-5 p-1.5 text-center inline-flex items-center
+                                        dark:focus:ring-blue-600 dark:bg-blue-800 dark:border-blue-800 dark:text-white dark:hover:bg-blue-700"
                                     >
                                         <PlusIcon class="mx-1"/>
 

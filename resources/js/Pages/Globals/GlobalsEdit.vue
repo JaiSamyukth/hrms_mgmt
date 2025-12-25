@@ -38,7 +38,7 @@ const form = useForm({
 const submitConfirm = () => {
     const swalWithBootstrapButtons = Swal.mixin({
         customClass: {
-            confirmButton: 'mx-4 text-white bg-purple-700 hover:bg-purple-800 focus:outline-none focus:ring-4 focus:ring-purple-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900',
+            confirmButton: 'mx-4 text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-900',
             cancelButton: 'text-white bg-gray-500 hover:bg-gray-600 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2 dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-900'
         },
         buttonsStyling: false
@@ -126,7 +126,7 @@ onMounted(() => {
                         </div>
                         <div class="mt-2">
                             <InputLabel for="timezone" :value="__('Time Zone') " class="inline"/>
-                            <a class="underline text-purple-500 text-sm" target="_blank"
+                            <a class="underline text-blue-500 text-sm" target="_blank"
                                href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">{{' ' + __('(list)')}}</a>
                             <ToolTip>
                                 {{__('This is the timezone that will be used to calculate the time related data in the application.')}}
@@ -156,7 +156,7 @@ onMounted(() => {
                             <div class="block">
                                 <Switch dir="ltr"
                                     v-model="form.is_ip_based"
-                                    :class="form.is_ip_based ? 'bg-purple-600' : 'bg-gray-400'"
+                                    :class="form.is_ip_based ? 'bg-blue-600' : 'bg-gray-400'"
                                     class="col-span-4 mt-2 relative inline-flex h-6 w-11 items-center rounded-full"
                                 >
                                     <span
@@ -179,7 +179,7 @@ onMounted(() => {
                                 {{__('Note: Supports IPv4 Only')}}.
                             </ToolTip>
                             <span v-if="form.is_ip_based" class="block text-xs">
-                                <a @click="fetchIP()" class="underline text-purple-500 "
+                                <a @click="fetchIP()" class="underline text-blue-500 "
                                    href="#">{{__('Grab Yours from Here,')}}</a>
                                 {{__('and make sure you are at your organization while setting this value, otherwise, all employee attendances will be rejected even if they are inside the organization.')}}
                                 <br>

@@ -339,7 +339,7 @@ const submitShift = () => {
                                             </div>
                                             <template #customFooter>
                                                 <button id="submitBranchButton" type="submit"
-                                                        class="ltr:mr-4 rtl:ml-4 text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-800">
+                                                        class="ltr:mr-4 rtl:ml-4 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                                                     {{__('Save')}}
                                                 </button>
                                                 <button data-modal-hide="branchModal" type="button" id="closeBranchModal"
@@ -382,7 +382,7 @@ const submitShift = () => {
                                             </div>
                                             <template #customFooter>
                                                 <button id="submitDepartmentButton" type="submit"
-                                                        class="ltr:mr-4 rtl:ml-4 text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-800">
+                                                        class="ltr:mr-4 rtl:ml-4 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                                                     {{__('Save')}}
                                                 </button>
                                                 <button data-modal-hide="departmentModal" type="button"
@@ -441,7 +441,7 @@ const submitShift = () => {
                                             </div>
                                             <template #customFooter>
                                                 <button id="submitPositionButton" type="submit"
-                                                        class="ltr:mr-4 rtl:ml-4 text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-800">
+                                                        class="ltr:mr-4 rtl:ml-4 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                                                     {{__('Save')}}
                                                 </button>
                                                 <button data-modal-hide="positionModal" type="button"
@@ -540,7 +540,7 @@ const submitShift = () => {
 
                                             <template #customFooter>
                                                 <button id="submitShiftButton" type="submit"
-                                                        class="ltr:mr-4 rtl:ml-4 text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-800">
+                                                        class="ltr:mr-4 rtl:ml-4 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                                                     {{__('Save')}}
                                                 </button>
                                                 <button data-modal-hide="shiftModal" type="button" id="closeShiftModal"
@@ -605,7 +605,7 @@ const submitShift = () => {
                                     <div>
                                         <Switch
                                             v-model="form.is_remote" dir="ltr"
-                                            :class="form.is_remote ? 'bg-purple-600' : 'bg-gray-400'"
+                                            :class="form.is_remote ? 'bg-blue-600' : 'bg-gray-400'"
                                             class="relative inline-flex h-6 w-11 items-center rounded-full mt-1"
                                         >
                                             <span class="sr-only">{{__('Remote Worker')}}</span>

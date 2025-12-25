@@ -132,7 +132,7 @@ const absencePercentage = computed(() => {
                     <div class="mt-5">
                         <p class="font-bold mb-2">{{__('Something\'s Wrong?')}}</p>
                         <p>{{__('If there is anything wrong in the presented data above please')}}
-                            <Link :href="route('requests.create')" class="underline text-purple-700" >{{__('Submit a Complaint Here')}}</Link>.
+                            <Link :href="route('requests.create')" class="underline text-blue-700" >{{__('Submit a Complaint Here')}}</Link>.
                         </p>
                     </div>
                 </Card>

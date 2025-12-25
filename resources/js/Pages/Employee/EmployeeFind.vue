@@ -41,13 +41,13 @@ defineProps({
                         </div>
                         <input type="search" id="default-search" v-model="term"
                                class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg
-                               bg-gray-50 focus:ring-purple-500 focus:border-purple-500 dark:bg-gray-700 dark:border-gray-600
-                               dark:placeholder-gray-400 dark:text-white dark:focus:ring-purple-500 dark:focus:border-purple-500"
+                               bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600
+                               dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                :placeholder="__('Search for an Employee')" required>
                     </div>
                     <div v-if="term.length > 0">
                         <ul v-if="employees.length > 0" class="py-2 text-sm text-gray-700 dark:text-gray-200 bg-gray-50 dark:bg-gray-900 shadow-md rounded-lg">
-                            <li v-for="employee in employees" class="block px-4 py-2 hover:bg-purple-100 dark:hover:bg-gray-700 dark:hover:text-white">
+                            <li v-for="employee in employees" class="block px-4 py-2 hover:bg-blue-100 dark:hover:bg-gray-700 dark:hover:text-white">
                                 <Link :href="route('employees.show', { id: employee.id } )">
                                     {{ employee.id}} - {{employee.name }} - {{ employee.national_id }} - {{ employee.phone }}
                                 </Link>

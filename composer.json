@@ -1,8 +1,15 @@
 {
-    "name": "laravel/laravel",
+    "name": "jaisamyukth/hrms-mgmt",
     "type": "project",
-    "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "description": "Professional HR Management System - Employee attendance, leaves, payrolls, and organizational management",
+    "keywords": [
+        "framework",
+        "laravel",
+        "hr",
+        "hrms",
+        "payroll",
+        "attendance"
+    ],
     "license": "MIT",
     "require": {
         "php": "^8.2",

@@ -108,7 +108,7 @@ const submit = () => {
     const swalWithBootstrapButtons = Swal.mixin({
         customClass: {
             cancelButton: 'mx-4 text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900',
-            confirmButton: 'text-white bg-purple-700 hover:bg-purple-800 focus:outline-none focus:ring-4 focus:ring-purple-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900'
+            confirmButton: 'text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-900'
         },
         buttonsStyling: false
     })
@@ -219,7 +219,7 @@ const submit = () => {
                     <div class="block">
                         <Switch dir="ltr"
                                 v-model="form.quick_pay"
-                                :class="form.quick_pay ? 'bg-purple-600' : 'bg-gray-400'"
+                                :class="form.quick_pay ? 'bg-blue-600' : 'bg-gray-400'"
                                 class="col-span-4 mt-2 relative inline-flex h-6 w-11 items-center rounded-full">
                                     <span
                                         :class="form.quick_pay ? 'translate-x-6' : 'translate-x-1'"
@@ -232,7 +232,7 @@ const submit = () => {
                             {{ __('Send Email to employee with this payroll details after confirming this payroll.') }}
                         </InputLabel>
                         <input id="checked-checkbox" type="checkbox" v-model="form.quick_pay_send_email" :checked="form.quick_pay_send_email"
-                               class="w-4 h-4 text-purple-600 bg-gray-100 border-gray-300 rounded focus:ring-purple-500 dark:focus:ring-purple-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                               class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                     </div>
                 </Card>
                 <div v-if="!form.quick_pay">
@@ -453,7 +453,7 @@ const submit = () => {
                                             <input :id="'ex-poor-radio-'+index" type="radio"
                                                    v-model="form.metrics[index]"
                                                    :value="1-(parseFloat(metrics[index].step)*3)"
-                                                   class="w-4 h-4 text-purple-600 bg-gray-100 border-gray-300 focus:ring-purple-500 dark:focus:ring-purple-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                                   class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
                                             <label :for="'ex-poor-radio-'+index"
                                                    class="li-checkbox-label">{{ __('Extremely Poor') }}</label>
                                         </div>
@@ -463,7 +463,7 @@ const submit = () => {
                                             <input :id="'v-poor-radio-'+index" type="radio"
                                                    v-model="form.metrics[index]"
                                                    :value="1-(parseFloat(metrics[index].step)*2)"
-                                                   class="w-4 h-4 text-purple-600 bg-gray-100 border-gray-300 focus:ring-purple-500 dark:focus:ring-purple-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                                   class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
                                             <label :for="'v-poor-radio-'+index"
                                                    class="li-checkbox-label">{{ __('Very Poor') }}</label>
                                         </div>
@@ -472,7 +472,7 @@ const submit = () => {
                                         <div class="flex items-center pl-3">
                                             <input :id="'poor-radio-'+index" type="radio" v-model="form.metrics[index]"
                                                    :value="1-parseFloat(metrics[index].step)"
-                                                   class="w-4 h-4 text-purple-600 bg-gray-100 border-gray-300 focus:ring-purple-500 dark:focus:ring-purple-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                                   class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
                                             <label :for="'poor-radio-'+index"
                                                    class="li-checkbox-label">{{ __('Poor') }}</label>
                                         </div>
@@ -482,7 +482,7 @@ const submit = () => {
                                             <input :id="'neutral-radio-'+index" type="radio"
                                                    v-model="form.metrics[index]"
                                                    :value="1"
-                                                   class="w-4 h-4 text-purple-600 bg-gray-100 border-gray-300 focus:ring-purple-500 dark:focus:ring-purple-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                                   class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
                                             <label :for="'neutral-radio-'+index"
                                                    class="li-checkbox-label">{{ __('Neutral') }}</label>
                                         </div>
@@ -491,7 +491,7 @@ const submit = () => {
                                         <div class="flex items-center pl-3">
                                             <input :id="'good-radio-'+index" type="radio" v-model="form.metrics[index]"
                                                    :value="1+parseFloat(metrics[index].step)"
-                                                   class="w-4 h-4 text-purple-600 bg-gray-100 border-gray-300 focus:ring-purple-500 dark:focus:ring-purple-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                                   class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
                                             <label :for="'good-radio-'+index"
                                                    class="li-checkbox-label">{{ __('Good') }}</label>
                                         </div>
@@ -501,7 +501,7 @@ const submit = () => {
                                             <input :id="'v-good-radio-'+index" type="radio"
                                                    v-model="form.metrics[index]"
                                                    :value="1+(parseFloat(metrics[index].step)*2)"
-                                                   class="w-4 h-4 text-purple-600 bg-gray-100 border-gray-300 focus:ring-purple-500 dark:focus:ring-purple-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                                   class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
                                             <label :for="'v-good-radio-'+index"
                                                    class="li-checkbox-label">{{ __('Very Good') }}</label>
                                         </div>
@@ -511,7 +511,7 @@ const submit = () => {
                                             <input :id="'excellent-radio-'+index" type="radio"
                                                    v-model="form.metrics[index]"
                                                    :value="1+(parseFloat(metrics[index].step)*3)"
-                                                   class="w-4 h-4 text-purple-600 bg-gray-100 border-gray-300 focus:ring-purple-500 dark:focus:ring-purple-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                                   class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
                                             <label :for="'excellent-radio-'+index"
                                                    class="li-checkbox-label">{{ __('Excellent') }}</label>
                                         </div>
@@ -563,7 +563,7 @@ const submit = () => {
                         <span> ({{ payroll.base }} * {{ form.performance_multiplier }}) + {{ total_additions }} - {{ total_deductions }} </span>
                     </div>
                     <HorizontalRule/>
-                    <div class="!my-4 text-purple-700 dark:text-purple-500 !border-red-500"><p
+                    <div class="!my-4 text-blue-700 dark:text-blue-500 !border-red-500"><p
                         class="font-medium inline">{{ __('Grand Total') }}: </p>
                         <span>
                             {{ payroll.currency + ' ' + (parseFloat(payroll.base) * parseFloat(form.performance_multiplier) +
